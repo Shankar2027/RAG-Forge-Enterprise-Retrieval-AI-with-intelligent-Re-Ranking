@@ -641,11 +641,11 @@ ragforge/
 
 ## 👥 Team Details
 
-**Built by:** [Mopur Shankar Reddy , Mounika D G ]  
+**Built by:** Mopur Shankar Reddy , Mounika D G , Spoorthi kalakappa Dyampur , Mahitha Reddy
 **Hackathon:** OSC AI BUILD 1.0  
-**Submission Date:** [Your Date]  
+**Submission Date:** JUN 15
 **GitHub:** [https://github.com/Shankar2027/RAG-Forge-Enterprise-Retrieval-AI-with-intelligent-Re-Ranking)  
-**Contact:** [your.email@domain.com](mailto:your.email@domain.com)
+**Contact:** [mopurshankareddy@gmail.com)
 
 ### Team Roles
 
