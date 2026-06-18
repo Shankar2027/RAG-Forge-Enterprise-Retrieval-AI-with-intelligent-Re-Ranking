@@ -33,7 +33,6 @@
 |----|------|---------|
 | 🌐 | [**Live Demo**](https://shankar0747-rag-forge.hf.space) | Try RAG Forge in action |
 | 💻 | [**GitHub Repository**](https://github.com/yourusername/rag-forge) | Source code (public) |
-| 📹 | [**Demo Video**](#demo) | 2-minute walkthrough |
 | 📚 | [**Technical Whitepaper**](#) | Deep technical dive |
 | 🐳 | [**Docker Compose**](#docker) | One-command deployment |
 
@@ -399,7 +398,7 @@ Try it now:
 
 ### Demo Video
 
-📹 **[2-Minute Feature Walkthrough](#)** — Shows:
+ **[Feature Walkthrough](#)** — Shows:
 - Document upload and indexing
 - Real-time query with streaming response
 - Source citation and confidence scores
@@ -543,38 +542,106 @@ npm run build
 
 ```
 ragforge/
-├── backend/
-│   ├── app/
-│   │   ├── api/               # Route handlers (auth, rag, documents, etc.)
-│   │   ├── core/              # Config, security, database setup
-│   │   ├── models/            # SQLAlchemy ORM models
-│   │   ├── schemas/           # Pydantic request/response schemas
-│   │   └── services/          # Business logic (ingestion, RAG, LLM, etc.)
-│   ├── main.py                # FastAPI app entry
-│   ├── requirements.txt        # Python dependencies
-│   └── .env.example
 │
-├── frontend/
-│   ├── src/
-│   │   ├── api/               # Axios HTTP client + endpoints
-│   │   ├── components/        # React components (UI + layout)
-│   │   ├── pages/             # Route pages (Login, Dashboard, Ask, etc.)
-│   │   ├── stores/            # Zustand auth store
-│   │   ├── types/             # TypeScript interfaces
-│   │   └── main.tsx           # React root
-│   ├── vite.config.ts         # Build config
-│   ├── tailwind.config.js     # Design tokens
-│   ├── package.json
-│   └── .env.example
+├── 📁 backend/                        # FastAPI application
+│   ├── 📄 main.py                     # App entry point, middleware, router registration
+│   ├── 📄 requirements.txt            # All Python dependencies
+│   ├── 📄 .env.example                # Environment variable template
+│   │
+│   ├── 📁 app/
+│   │   ├── 📁 api/                    # HTTP route handlers
+│   │   │   ├── 📄 __init__.py
+│   │   │   ├── 📄 auth.py             # Register, login, refresh, OTP, /me
+│   │   │   ├── 📄 collections.py      # CRUD for document collections
+│   │   │   ├── 📄 documents.py        # Upload, status, chunks, reindex, delete
+│   │   │   ├── 📄 rag.py              # /ask, /ask/stream (SSE), /logs
+│   │   │   └── 📄 dashboard.py        # KPI stats, activity time-series
+│   │   │
+│   │   ├── 📁 core/                   # App-wide configuration
+│   │   │   ├── 📄 config.py           # Pydantic Settings — all env vars
+│   │   │   ├── 📄 database.py         # Async SQLAlchemy engine + session
+│   │   │   └── 📄 security.py         # JWT creation/decode, bcrypt, OTP
+│   │   │
+│   │   ├── 📁 models/
+│   │   │   └── 📄 models.py           # SQLAlchemy ORM: User, Collection,
+│   │   │                              #   Document, Chunk, QueryLog
+│   │   │
+│   │   ├── 📁 schemas/
+│   │   │   └── 📄 schemas.py          # Pydantic v2 request/response models
+│   │   │
+│   │   └── 📁 services/               # Business logic layer
+│   │       ├── 📄 ingestion.py        # Parse → clean → chunk → embed pipeline
+│   │       ├── 📄 vector_store.py     # ChromaDB wrapper (vector/keyword/hybrid)
+│   │       ├── 📄 reranker.py         # Cross-encoder re-ranking service
+│   │       ├── 📄 llm.py              # Ollama + Groq LLM service, streaming
+│   │       └── 📄 rag_pipeline.py     # Orchestrates full query flow + logging
+│   │
+│   ├── 📄 ragforge.db                 # SQLite database (auto-created)
+│   ├── 📁 chroma_db/                  # ChromaDB vector store (auto-created)
+│   └── 📁 uploads/                    # Uploaded files (auto-created)
 │
-└── docker-compose.yml         # Full stack in one file
+├── 📁 frontend/                       # React application
+│   ├── 📄 index.html                  # HTML entry point, Google Fonts
+│   ├── 📄 package.json                # npm dependencies and scripts
+│   ├── 📄 vite.config.ts              # Vite config + /api proxy
+│   ├── 📄 tailwind.config.js          # Custom design tokens
+│   ├── 📄 tsconfig.json               # TypeScript strict config
+│   ├── 📄 postcss.config.js           # PostCSS + Autoprefixer
+│   ├── 📄 .env.example                # Frontend environment template
+│   │
+│   ├── 📁 public/
+│   │   └── 📄 favicon.svg             # Custom SVG favicon
+│   │
+│   └── 📁 src/
+│       ├── 📄 main.tsx                # React root, QueryClientProvider
+│       ├── 📄 App.tsx                 # Router, protected/public route guards
+│       ├── 📄 index.css               # Global styles, Tailwind directives,
+│       │                              #   scrollbar, animations, component classes
+│       │
+│       ├── 📁 api/                    # Axios API layer (mirrors backend routes)
+│       │   ├── 📄 client.ts           # Axios instance + JWT + auto-refresh interceptors
+│       │   ├── 📄 auth.ts             # register, login, me, forgotPassword, verifyOtp
+│       │   ├── 📄 collections.ts      # list, get, create, update, delete
+│       │   ├── 📄 documents.ts        # list, upload, getChunks, reindex, delete
+│       │   ├── 📄 rag.ts              # ask, streamAskFetch (AsyncGenerator), getLogs
+│       │   └── 📄 dashboard.ts        # getStats, getActivity
+│       │
+│       ├── 📁 components/
+│       │   ├── 📁 layout/
+│       │   │   └── 📄 DashboardLayout.tsx  # Sidebar + <Outlet>, collapsible nav
+│       │   │
+│       │   └── 📁 ui/
+│       │       └── 📄 index.tsx            # Spinner, PageHeader, EmptyState,
+│       │                                   # StatusBadge, ConfidenceBar, MetricCard,
+│       │                                   # SkeletonRows, Modal, Tooltip,
+│       │                                   # FileTypeIcon, formatBytes/Ms/Number
+│       │
+│       ├── 📁 pages/
+│       │   ├── 📄 LoginPage.tsx            # Email/password auth
+│       │   ├── 📄 RegisterPage.tsx         # Registration + password strength
+│       │   ├── 📄 ForgotPasswordPage.tsx   # 2-step OTP password reset
+│       │   ├── 📄 DashboardPage.tsx        # KPIs + area chart + pie chart
+│       │   ├── 📄 CollectionsPage.tsx      # Collection grid + create/delete modal
+│       │   ├── 📄 CollectionDetailPage.tsx # Collection stats + doc list + config
+│       │   ├── 📄 DocumentsPage.tsx        # Dropzone upload + table + chunk viewer
+│       │   ├── 📄 AskPage.tsx              # Streaming RAG chat interface
+│       │   ├── 📄 HistoryPage.tsx          # Query logs + drill-down + citations
+│       │   └── 📄 SettingsPage.tsx         # Profile, pipeline defaults, system info
+│       │
+│       ├── 📁 stores/
+│       │   └── 📄 authStore.ts             # Zustand auth (persisted to localStorage)
+│       │
+│       └── 📁 types/
+│           └── 📄 index.ts                 # TypeScript interfaces (mirrors Pydantic schemas)
+│
+└── 📄 README.md
 ```
 
 ---
 
 ## 👥 Team Details
 
-**Built by:** [Your Name(s)]  
+**Built by:** [Mopur Shankar Reddy , Mounika D G ]  
 **Hackathon:** OSC AI BUILD 1.0  
 **Submission Date:** [Your Date]  
 **GitHub:** [github.com/yourusername/rag-forge](https://github.com/yourusername/rag-forge)  
