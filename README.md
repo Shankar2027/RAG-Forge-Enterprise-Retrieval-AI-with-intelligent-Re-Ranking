@@ -25,8 +25,26 @@
 
 </div>
 
+
 ---
 
+## 👥 Team Details
+
+**Built by Team "eagle eye" for OSC AI BUILD 1.0**
+
+*   **Mopur Shankar Reddy** (Lead Developer/Repo Manager) – Full-Stack Development, Document parsing, RAG pipeline, API design
+*   **Mounika D G** – Frontend Engineering, React UI, real-time streaming, chart visualization
+*   **Spoorthi Kalakappa Dyampur** – DevOps & Deployment, Docker, docker-compose, production setup
+*   **Mahitha Reddy** – Research & Testing, Confidence calibration tuning, benchmark performance
+
+*(Note: To streamline our workflow during the fast-paced build phase, all code integration and repository management was routed through the Lead Developer).*
+
+**Submission Date:** June 15, 2026  
+**GitHub:** [RAG Forge Repository](https://github.com/Shankar2027/RAG-Forge-Enterprise-Retrieval-AI-with-intelligent-Re-Ranking)  
+**Contact:** mopurshankareddy@gmail.com 
+
+---
+---
 ## 📊 Quick Links (For Evaluators)
 
 | 🔗 | Link | Purpose |
@@ -638,21 +656,6 @@ ragforge/
 ```
 
 ---
-
-## 👥 Team Details
-
-**Built by:** Mopur Shankar Reddy , Mounika D G , Spoorthi kalakappa Dyampur , Mahitha Reddy
-**Hackathon:** OSC AI BUILD 1.0  
-**Submission Date:** JUN 15
-**GitHub:** [https://github.com/Shankar2027/RAG-Forge-Enterprise-Retrieval-AI-with-intelligent-Re-Ranking)  
-**Contact:** [mopurshankareddy@gmail.com)
-
-### Team Roles
-
-- **Full-Stack Development:** Document parsing, RAG pipeline, API design, dashboard
-- **Frontend Engineering:** React UI, real-time streaming, chart visualization
-- **DevOps & Deployment:** Docker, docker-compose, production setup
-- **Research & Testing:** Confidence calibration tuning, benchmark performance
 
 ---
 
