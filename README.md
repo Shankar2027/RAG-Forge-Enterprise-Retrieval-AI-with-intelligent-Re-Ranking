@@ -32,7 +32,7 @@
 | 🔗 | Link | Purpose |
 |----|------|---------|
 | 🌐 | [**Live Demo**](https://shankar0747-rag-forge.hf.space) | Try RAG Forge in action |
-| 💻 | [**GitHub Repository**](https://github.com/yourusername/rag-forge) | Source code (public) |
+| 💻 | [**GitHub Repository**](https://github.com/Shankar2027/RAG-Forge-Enterprise-Retrieval-AI-with-intelligent-Re-Ranking) | Source code (public) |
 | 📚 | [**Technical Whitepaper**](#) | Deep technical dive |
 | 🐳 | [**Docker Compose**](#docker) | One-command deployment |
 
@@ -644,7 +644,7 @@ ragforge/
 **Built by:** [Mopur Shankar Reddy , Mounika D G ]  
 **Hackathon:** OSC AI BUILD 1.0  
 **Submission Date:** [Your Date]  
-**GitHub:** [github.com/yourusername/rag-forge](https://github.com/yourusername/rag-forge)  
+**GitHub:** [https://github.com/Shankar2027/RAG-Forge-Enterprise-Retrieval-AI-with-intelligent-Re-Ranking)  
 **Contact:** [your.email@domain.com](mailto:your.email@domain.com)
 
 ### Team Roles
