@@ -37,7 +37,6 @@
 *   **Spoorthi Kalakappa Dyampur** –  Frontend Engineering, React UI, real-time streaming, chart visualization 
 *   **Mahitha Reddy** – Research & Testing, Confidence calibration tuning, benchmark performance
 
-*(Note: To streamline our workflow during the fast-paced build phase, all code integration and repository management was routed through the Lead Developer).*
 
 **Submission Date:** June 15, 2026  
 **GitHub:** [RAG Forge Repository](https://github.com/Shankar2027/RAG-Forge-Enterprise-Retrieval-AI-with-intelligent-Re-Ranking)  
