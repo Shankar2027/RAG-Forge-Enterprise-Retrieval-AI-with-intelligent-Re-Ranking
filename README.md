@@ -396,7 +396,7 @@ Try it now:
 4. Ask questions about your document
 5. View the dashboard and audit logs
 
-### Demo Video
+### Features
 
  **[Feature Walkthrough](#)** — Shows:
 - Document upload and indexing
