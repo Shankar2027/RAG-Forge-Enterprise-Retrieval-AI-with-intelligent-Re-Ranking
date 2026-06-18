@@ -33,8 +33,8 @@
 **Built by Team "eagle eye" for OSC AI BUILD 1.0**
 
 *   **Mopur Shankar Reddy** (Lead Developer/Repo Manager) – Full-Stack Development, Document parsing, RAG pipeline, API design
-*   **Mounika D G** – Frontend Engineering, React UI, real-time streaming, chart visualization
-*   **Spoorthi Kalakappa Dyampur** – DevOps & Deployment, Docker, docker-compose, production setup
+*   **Mounika D G** – DevOps & Deployment, Docker, docker-compose, production setup
+*   **Spoorthi Kalakappa Dyampur** –  Frontend Engineering, React UI, real-time streaming, chart visualization 
 *   **Mahitha Reddy** – Research & Testing, Confidence calibration tuning, benchmark performance
 
 *(Note: To streamline our workflow during the fast-paced build phase, all code integration and repository management was routed through the Lead Developer).*
